@@ -1,0 +1,21 @@
+{% extends  "_base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block title %} Log In {% endblock title %}
+
+{% block content %}
+  <h2>Log In</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-dark" type="submit">Log In</button>
+  </form>
+<div class="container">
+  <div class="row align-items-center">
+
+    <img class="img-fluid" src="https://www.dndbeyond.com/avatars/thumbnails/0/201/1000/1000/636252764027417823.jpeg" alt=":)" style="width:500px;height:600px;">
+
+  </div>
+</div>
+{% endblock content %}

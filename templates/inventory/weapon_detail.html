@@ -1,0 +1,30 @@
+{% extends "_base.html" %}
+{% block content %}
+
+
+<div class="display-1 text-center p-3">
+  <h2 class="">{% if weapon.bonus > "0" %} +{{weapon.bonus }} {% endif %} {{weapon.name}}</h2>
+  <p class="lead justify-content-center">{{weapon.description}}</p>
+
+</div>
+<div class="col d-flex justify-content-center">
+  <div class="card" style="width: 30rem;">
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Weapon Type: {{ weapon.weapontype }}</li>
+      <li class="list-group-item">Damage: {{ weapon.damage }}</li>
+      <li class="list-group-item">Attack Type: {{ weapon.attack|title }}</li>
+      <li class="list-group-item">Attunement: {% if weapon.attunement == True %}Yes{% else %}No{% endif %}</li>
+      <li class="list-group-item">Legendary: {% if weapon.islegendary == True %}Yes{% else %}No{% endif %}</li>
+      <li class="list-group-item">Properties: {{weapon.properties}}</li>
+      <li class="list-group-item">Price: {{weapon.price}} gold</li>
+    </ul>
+    <div class="card-footer">
+      {% if user == weapon.author %}
+      <a href="{% url 'updateweaponitem' weapon.id %}" class="w-100 btn btn-lg btn-outline-secondary btn-dark text-white">Edit</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

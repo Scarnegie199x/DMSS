@@ -1,0 +1,37 @@
+{% extends  "_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %} Profile {% endblock title %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row align-items-center">
+
+
+    <h2 class="display-1 text-center">Profile for {{user.username}}</h2>
+
+      <div class="col-md">
+
+          <p class ="lead justify-content-center">
+            <br>
+            <br>
+            <b>Username:</b> {{user.username}}<br>
+            <b>Email</b>: {{user.email}}<br>
+            <b>Dungeon name:</b> {{user.dungeon_name}}<br>
+            <b>Dungeon URL:</b> <a href="/accounts/{{user.username}}">accounts/{{user.username}}</a>
+
+
+          </p>
+          <br>
+          <a href="{% url 'editprofile' %}" class="btn btn-dark" role="button">Edit profile</a>
+      </div>
+      <div class="col-md">
+        <img class="img-fluid" src="https://static.wikia.nocookie.net/forgottenrealms/images/2/2c/Monster_Manual_5e_-_Beholder_-_p28.jpg/revision/latest?cb=20200313153220" alt=":)">
+      </div>
+
+    </div>
+</div>
+
+
+{% endblock content %}

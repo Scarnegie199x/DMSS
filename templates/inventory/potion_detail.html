@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+{% block content %}
+   
+  <div class="wrapper">
+    <ul>
+      <li>Name: {{ potion.name }}</li>
+      <li>Description: {{ potion.description }}</li>
+      <li>Price: {{ potion.price }}</li>
+    </ul>
+  </div>
+  {% if user == potion.author %}
+  <button class="btn btn-success" type="submit">
+    <a href="{% url 'updatepotionitem' potion.id %}" class="link-dark">Edit</a>
+  </button>
+  {% endif %}
+{% endblock content %}

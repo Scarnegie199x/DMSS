@@ -1,0 +1,17 @@
+{% extends "_base.html" %}
+{% block content %}
+   
+  <div class="wrapper">
+    <ul>
+      <li>Name: {{ wonderous.name }}</li>
+      <li>Description: {{ wonderous.description }}</li>
+      <li>Price: {{ wonderous.price }}</li>
+      <li>Legendary: {% if wonderous.islegendary == True %} Yes {% else %} No {% endif %}</li>
+    </ul>
+  </div>
+  {% if user == wonderous.author %}
+  <button class="btn btn-success" type="submit">
+    <a href="{% url 'updatewonderousitem' wonderous.id %}" class="link-dark">Edit</a>
+  </button>
+  {% endif %}
+{% endblock content %}

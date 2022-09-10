@@ -1,0 +1,24 @@
+{% extends "_base.html" %}
+{% block content %}
+   
+  <div class="wrapper">
+    <ul>
+      <li>Name: {{ spell.name }}</li>
+      <li>Spell Level: {{ spell.spell_level }}</li>
+      <li>Casting time: {{ spell.casting_time }}</li>
+      <li>Range: {{ spell.range }}</li>
+      <li>Target: {{ spell.target}}</li>
+      <li>Components: {{ spell.components }}</li>
+      <li>Duration: {{ spell.duration }}</li>
+      <li>Higher levels: {{ spell.higher_levels }}</li>
+      <li>Spell Lists: {{ spell.spell_lists }}</li>
+      <li>Description: {{ spell.description }}</li>
+      <li>Price: {{ spell.price }}</li>
+    </ul>
+  </div>
+  {% if user == spell.author %}
+  <button class="btn btn-success" type="submit">
+    <a href="{% url 'updatespellitem' spell.id %}" class="link-dark">Edit</a>
+  </button>
+  {% endif %}
+{% endblock content %}
