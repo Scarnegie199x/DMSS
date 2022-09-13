@@ -13,31 +13,39 @@
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'home' %}">Dungeon Master Superstore</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
 
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'item_list' %}">Items</a>
+            <a class="nav-link px-3" href="{% url 'item_list' %}">Master list</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link px-3" href="/accounts/{{user.username}}">{{ user.dungeon_name }}</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
+          <li>
+            <div class="dropdown">
+              {% if user.is_authenticated %}
+              <a class="nav-link px-3" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                Create New!
+              </a>
+              {% endif %}
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="{% url 'new_weapon' %}">Weapon</a></li>
+                <li><a class="dropdown-item" href="{% url 'new_armor' %}">Armor</a></li>
+                <li><a class="dropdown-item" href="{% url 'new_spell' %}">Spells</a></li>
+                <li><a class="dropdown-item" href="{% url 'new_potion' %}">Potion</a></li>
+                <li><a class="dropdown-item" href="{% url 'new_wonderous' %}">Wonderous Item</a></li>
+              </ul>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/accounts/{{user.username}}">{{ user.dungeon_name }}</a>
-          </li>
-
         </ul>
 
-          <div class="dropdown pb-4">
+
             {% if user.is_authenticated %}
+            <div class="dropdown pb-1">
               <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle " id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img src="https://openclipart.org/image/800px/334032"  width="32" height="32" class="rounded-circle">
-                  <span class="d-none d-sm-inline mx-1">{{ user.username }}</span>
+
+                  <span class="d-none d-sm-inline mx-1">{{ user.username|title }}</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
 
@@ -47,15 +55,19 @@
                   </li>
                   <li><a class="dropdown-item" href="{% url 'account_logout' %}">Sign out</a></li>
               </ul>
-
+            </div>
             {% else %}
             <a href="{% url 'account_login' %}" class="d-flex align-items-center text-white text-decoration-none" aria-expanded="false">
-                <img src="https://openclipart.org/image/800px/334032"  width="32" height="32" class="rounded-circle">
-                <span class="d-flex d-sm-inline mx-1">Login</span>
+
+                <span class="d-flex d-sm-inline mx-3">Login</span>
+            </a>
+            <a href="{% url 'account_signup' %}" class="d-flex align-items-center text-white text-decoration-none" aria-expanded="false">
+
+                <span class="d-flex d-sm-inline mx-3">Sign up</span>
             </a>
 
             {% endif %}
-          </div>
+
 
 
       </div>

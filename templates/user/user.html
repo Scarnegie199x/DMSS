@@ -6,7 +6,7 @@
 
 
 
-  <h3>Welcome to {{userpage.username}}'s realm! {{ userpage.dungeon_name }}</h3>
+  <h3 class="col d-flex justify-content-center pb-3">Welcome to {{userpage.username}}'s realm, {{ userpage.dungeon_name }}!</h3>
 
 
 <h2>Weapons:</h2>
@@ -22,12 +22,12 @@
                  <div class="card-body">
                    <ul class="list-unstyled mt-3 mb-4">
 
-                     <li>{{x.bonus}} {{x.weapontype}}</li>
+                     <li>{% if x.bonus > 0 %}+{{x.bonus}} {% endif %} {{x.weapontype}}</li>
                      <li>{{x.properties}}</li>
                      <li>{{x.price}} gold</li>
 
                    </ul>
-                   <a href="{{x.get_absolute_url}}" class="w-100 btn btn-link btn-lg btn-outline-primary">Details</a>
+                   <a href="{{x.get_absolute_url}}" class="w-100 btn btn-lg btn-outline-secondary btn-white text-black">Details</a>
                  </div>
                </div>
              </div>
@@ -55,12 +55,12 @@
                <div class="card-body">
                  <ul class="list-unstyled mt-3 mb-4">
 
-                   <li>{{x.bonus}} {{x.armortype}}</li>
+                   <li>{% if x.bonus > 0 %}+{{x.bonus}} {% endif %}{{x.armortype}}</li>
                    <li>{{x.properties}}</li>
                    <li>{{x.price}} gold</li>
 
                  </ul>
-                 <a href="{{x.get_absolute_url}}" class="w-100 btn btn-link btn-lg btn-outline-primary">Details</a>
+                 <a href="{{x.get_absolute_url}}" class="w-100 btn btn-lg btn-outline-secondary btn-white text-black">Details</a>
                </div>
              </div>
            </div>
@@ -87,7 +87,7 @@
                    <li>{{x.price}} gold</li>
 
                  </ul>
-                 <a href="{{x.get_absolute_url}}" class="w-100 btn btn-link btn-lg btn-outline-primary">Details</a>
+                 <a href="{{x.get_absolute_url}}" class="w-100 btn btn-lg btn-outline-secondary btn-white text-black">Details</a>
                </div>
              </div>
            </div>
@@ -111,7 +111,7 @@
                    <li>{{x.price}} gold</li>
 
                  </ul>
-                 <a href="{{x.get_absolute_url}}" class="w-100 btn btn-link btn-lg btn-outline-primary">Details</a>
+                 <a href="{{x.get_absolute_url}}" class="w-100 btn btn-lg btn-outline-secondary btn-white text-black">Details</a>
                </div>
              </div>
            </div>
@@ -133,7 +133,7 @@
                    <li>{{x.price}} gold</li>
 
                  </ul>
-                 <a href="{{x.get_absolute_url}}" class="w-100 btn btn-link btn-lg btn-outline-primary">Details</a>
+                 <a href="{{x.get_absolute_url}}" class="w-100 btn btn-lg btn-outline-secondary btn-white text-black">Details</a>
                </div>
              </div>
            </div>

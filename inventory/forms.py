@@ -30,11 +30,11 @@ class PotionCreationForm(forms.ModelForm):
 
         class Meta:
             model = PotionItem
-            fields = ['name','description','price']
+            fields = ['name','description','price', 'properties']
 
 class WonderousCreationForm(forms.ModelForm):
         class Meta:
             model = WonderousItem
-            fields = ['name','description','islegendary','price']
+            fields = ['name','description','islegendary','price','properties']
 
 

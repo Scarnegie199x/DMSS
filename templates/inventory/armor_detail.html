@@ -3,7 +3,7 @@
 
 
 <div class="display-1 text-center p-3">
-  <h2 class="">{% if armor.bonus > "0" %} +{{armor.bonus }} {% endif %} {{armor.name}}</h2>
+  <h2 class="">{% if armor.bonus > 0 %} +{{armor.bonus }} {% endif %} {{armor.name}}</h2>
   <p class="lead justify-content-center">{{armor.description}}</p>
 
 </div>
@@ -22,7 +22,7 @@
     </ul>
     <div class="card-footer">
       {% if user == armor.author %}
-      <a href="{% url 'updatearmoritem' armor.id %}" class="w-100 btn btn-lg btn-outline-primary link-dark">Edit</a>
+      <a href="{% url 'updatearmoritem' armor.id %}" class="w-100 btn btn-lg btn-outline-secondary btn-dark text-white">Edit</a>
       {% endif %}
     </div>
   </div>

@@ -1,24 +1,30 @@
 {% extends "_base.html" %}
 {% block content %}
    
-  <div class="wrapper">
-    <ul>
-      <li>Name: {{ spell.name }}</li>
-      <li>Spell Level: {{ spell.spell_level }}</li>
-      <li>Casting time: {{ spell.casting_time }}</li>
-      <li>Range: {{ spell.range }}</li>
-      <li>Target: {{ spell.target}}</li>
-      <li>Components: {{ spell.components }}</li>
-      <li>Duration: {{ spell.duration }}</li>
-      <li>Higher levels: {{ spell.higher_levels }}</li>
-      <li>Spell Lists: {{ spell.spell_lists }}</li>
-      <li>Description: {{ spell.description }}</li>
-      <li>Price: {{ spell.price }}</li>
+<div class="display-1 text-center p-3">
+  <h2 class="">{{spell.name}}</h2>
+</div>
+<div class="col d-flex justify-content-center">
+  <div class="card" style="width: 30rem;">
+
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Spell level: {{spell.spell_level}}</li>
+      <li class="list-group-item">School: {{spell.school}}</li>
+      <li class="list-group-item">Casting time: {{spell.casting_time}}</li>
+      <li class="list-group-item">Range: {{spell.range}}</li>
+      <li class="list-group-item">Terget: {{spell.target}}</li>
+      <li class="list-group-item">Componnents: {{spell.components}}</li>
+      <li class="list-group-item">Duration: {{spell.duration}}</li>
+      <li class="list-group-item">Description: {{spell.description}}</li>
+      <li class="list-group-item">Higher-level: {{spell.higher_levels}}</li>
+      <li class="list-group-item">Spell lists: {{spell.spell_lists}}</li>
+      <li class="list-group-item">Price: {{spell.price}} gold</li>
     </ul>
+    <div class="card-footer">
+      {% if user == spell.author %}
+      <a href="{% url 'updatespellitem' spell.id %}" class="w-100 btn btn-lg btn-outline-secondary btn-dark text-white">Edit</a>
+      {% endif %}
+    </div>
   </div>
-  {% if user == spell.author %}
-  <button class="btn btn-success" type="submit">
-    <a href="{% url 'updatespellitem' spell.id %}" class="link-dark">Edit</a>
-  </button>
-  {% endif %}
+</div>
 {% endblock content %}

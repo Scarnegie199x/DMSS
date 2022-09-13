@@ -2,7 +2,6 @@
 {% block content %}
 
 
-
     
       <h2>Weapons:</h2>
 
@@ -17,13 +16,13 @@
                        <div class="card-body">
                          <ul class="list-unstyled mt-3 mb-4">
 
-                           <li>+{{x.bonus}} {{x.weapontype}}</li>
-                           <li>{{x.properties}}</li>
-                           <li>{{x.price}} gold</li>
-                           <li><a href="/accounts/{{x.author.username}}">{{x.author}}</a></li>
+                           <li>{% if x.bonus > 0 %}+{{x.bonus}} {% endif %}{{x.weapontype}}</li>
+                           <li>{{x.properties|truncatewords:20}}</li>
+                           <li>{{x.price}} Gold</li>
+                           <li><a href="/accounts/{{x.author.username}}"class="link-secondary">{{x.author|upper}}</a></li>
 
                          </ul>
-                         <a href="{{x.get_absolute_url}}" class="w-100 btn btn-link btn-lg btn-outline-primary">Details</a>
+                         <a href="{{x.get_absolute_url}}" class="w-100 btn btn-lg btn-outline-secondary btn-white text-black">Details</a>
                        </div>
                      </div>
                    </div>
@@ -32,7 +31,7 @@
         </div>
 
 
-      <h2>Armor:</h2>
+      <h2>Armor</h2>
 
       <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
          {% for x in armorlist %}
@@ -45,13 +44,13 @@
                      <div class="card-body">
                        <ul class="list-unstyled mt-3 mb-4">
 
-                         <li>+{{x.bonus}} {{x.armortype}}</li>
-                         <li>{{x.properties}}</li>
-                         <li>{{x.price}} gold</li>
-                         <li><a href="/accounts/{{x.author.username}}">{{x.author}}</a></li>
+                         <li>{% if x.bonus > 0 %}+{{x.bonus}} {% endif %}{{x.armortype}}</li>
+                         <li>{{x.properties|truncatewords:20}}</li>
+                         <li>{{x.price}} Gold</li>
+                         <li><a href="/accounts/{{x.author.username}}"class="link-secondary">{{x.author|upper}}</a></li>
 
                        </ul>
-                       <a href="{{x.get_absolute_url}}" class="w-100 btn btn-link btn-lg btn-outline-primary">Details</a>
+                       <a href="{{x.get_absolute_url}}" class="w-100 btn btn-lg btn-outline-secondary btn-white text-black">Details</a>
                      </div>
                    </div>
                  </div>
@@ -72,14 +71,14 @@
                      <div class="card-body">
                        <ul class="list-unstyled mt-3 mb-4">
 
-                         <li>{{x.spell_level}} level {{x.school}}</li>
+                         <li>Level {{x.spell_level}} {{x.school}}</li>
                          <li>{{x.casting_time}}</li>
-                         <li>{{x.range}}</li>
-                         <li>{{x.price}} gold</li>
-                         <li><a href="/accounts/{{x.author.username}}">{{x.author}}</a></li>
+                         <li>{{x.description|truncatewords:20}}</li>
+                         <li>{{x.price}} Gold</li>
+                         <li><a href="/accounts/{{x.author.username}}"class="link-secondary">{{x.author|upper}}</a></li>
 
                        </ul>
-                       <a href="{{x.get_absolute_url}}" class="w-100 btn btn-link btn-lg btn-outline-primary">Details</a>
+                       <a href="{{x.get_absolute_url}}" class="w-100 btn btn-lg btn-outline-secondary btn-white text-black">Details</a>
                      </div>
                    </div>
                  </div>
@@ -99,12 +98,12 @@
                      <div class="card-body">
                        <ul class="list-unstyled mt-3 mb-4">
 
-                         <li>{{x.description}}</li>
-                         <li>{{x.price}} gold</li>
-                         <li><a href="/accounts/{{x.author.username}}">{{x.author}}</a></li>
+                         <li>{{x.properties|truncatewords:20}}</li>
+                         <li>{{x.price}} Gold</li>
+                         <li><a href="/accounts/{{x.author.username}}"class="link-secondary">{{x.author|upper}}</a></li>
 
                        </ul>
-                       <a href="{{x.get_absolute_url}}" class="w-100 btn btn-link btn-lg btn-outline-primary">Details</a>
+                       <a href="{{x.get_absolute_url}}" class="w-100 btn btn-lg btn-outline-secondary btn-white text-black">Details</a>
                      </div>
                    </div>
                  </div>
@@ -122,12 +121,12 @@
                      </div>
                      <div class="card-body">
                        <ul class="list-unstyled mt-3 mb-4">
-                         <li>{{x.description}}</li>
-                         <li>{{x.price}} gold</li>
-                         <li><a href="/accounts/{{x.author.username}}">{{x.author}}</a></li>
+                         <li>{{x.properties|truncatewords:20}}</li>
+                         <li>{{x.price}} Gold</li>
+                         <li><a href="/accounts/{{x.author.username}}"class="link-secondary">{{x.author|upper}}</a></li>
 
                        </ul>
-                       <a href="{{x.get_absolute_url}}" class="w-100 btn btn-link btn-lg btn-outline-primary">Details</a>
+                       <a href="{{x.get_absolute_url}}" class="w-100 btn btn-lg btn-outline-secondary btn-white text-black">Details</a>
                      </div>
                    </div>
                  </div>

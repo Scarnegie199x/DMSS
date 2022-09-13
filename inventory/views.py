@@ -107,7 +107,7 @@ class UpdateArmorView(UpdateView):
 class UpdatePotionView(UpdateView):
     model = PotionItem
     template_name = "inventory/update.html"
-    fields = ['name', 'description', 'price']
+    fields = ['name', 'description', 'price','properties']
 
 class UpdateSpellView(UpdateView):
     model = SpellItem
@@ -118,4 +118,4 @@ class UpdateSpellView(UpdateView):
 class UpdateWonderousView(UpdateView):
     model = WonderousItem
     template_name = "inventory/update.html"
-    fields = ['name', 'description', 'islegendary', 'price']
+    fields = ['name', 'description', 'islegendary', 'price','properties']
