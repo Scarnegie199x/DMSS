@@ -1,5 +1,6 @@
 {% extends "_base.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 {% block title %}Log Out{% endblock %}
 
@@ -13,7 +14,7 @@
   </form>
   <div class="row align-items-center">
 
-    <img class="img-fluid" src="https://i.pinimg.com/736x/e1/52/61/e152615f2a8d22ff947068c8debfe764.jpg" alt=":)" style="width:500px;height:400px;">
+    <img class="img-fluid" src="{% static '/images/logout.jpg' %}" alt=":)" style="width:500px;height:400px;">
 
   </div>
 {% endblock content %}

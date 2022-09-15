@@ -1,5 +1,6 @@
 {% extends  "_base.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
 
 {% block title %} Profile {% endblock title %}
 
@@ -27,7 +28,7 @@
           <a href="{% url 'editprofile' %}" class="btn btn-dark" role="button">Edit profile</a>
       </div>
       <div class="col-md">
-        <img class="img-fluid" src="https://static.wikia.nocookie.net/forgottenrealms/images/2/2c/Monster_Manual_5e_-_Beholder_-_p28.jpg/revision/latest?cb=20200313153220" alt=":)">
+        <img class="img-fluid" src="{% static 'images/beholder.jpg' %}" alt="beholder">
       </div>
 
     </div>
