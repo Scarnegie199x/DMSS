@@ -21,3 +21,5 @@ Creating accounts for just the dungeon master and not all users was always the d
 Future features of the website:
 1. Search function
 2. Click-to-link URL for easy sharing
+
+The website was an amazing challnge for me, it pushed me to learn new concepts and grow to meet the demands of what I had envisioned. The learning curve was steep but it gave me such an appreciation for Django and how powerful it is. I'm excited to continue working on DungeonmasterSuperstore and other future projects. 
